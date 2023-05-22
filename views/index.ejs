@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Swiss Air Lounge</title>
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+            <a id="logo" href="">
+                <h1>SWISSAIR</h1>
+            </a>
+        </header>
+        <section id="svg-graphic">
+            <div id="svg-container">
+
+                <svg viewBox="0 0 2388 1668">
+                    <g transform="translate(-260,62.5)">
+                        <path id="front-line"
+                            d="m 259.62174,79.543943 809.78866,0.227037 76.2856,0.227037 171.6035,249.212903 h 196.9766 v 38.7324 h -170.3066 l 114.8867,166.8438 h 186.6094 v 38.7324 h -159.9375 l 131.6289,191.16017 h 361.9043 c 174.9188,0 227.3941,67.46911 222.3965,72.4668 h -0.3184 c 3.0438,6.89728 -50.4115,72.03515 -222.4609,72.03515 h -361.9063 l -131.6309,191.16206 h 159.9415 v 38.7324 h -186.6114 l -114.8847,166.8438 h 170.3066 v 38.7324 h -196.9766 l -171.6035,249.2129 -82.5817,-0.02 -803.10976,-0.9148" />
+                    </g>
+                    <g transform="translate(-191,60)">
+                        <path id="full-outline-grey"
+                            d="m 992.4236,1596.3295 196.1602,-563.4883 V 911.64783 h -6.2481 c -256.21234,0 -427.60598,-17.16924 -535.56054,-34.49609 L 451.4236,1095.3119 h -59.97071 l 93.13868,-253.64454 0.10546,-3.2168 -93.6289,-254.9707 h 59.97265 l 195.35157,218.16016 c 107.95457,-17.32685 279.34831,-34.49414 535.56055,-34.49414 h 6.248 V 645.95056 L 992.04078,82.462283 h 83.71092 l 171.6035,249.212887 h 196.9766 v 38.73243 h -170.3066 l 114.8847,166.84375 h 186.6114 v 38.73242 h -159.9415 l 131.6309,191.16211 h 361.9063 c 172.0494,0 225.5047,65.13787 222.4609,72.03515 h 0.3184 c 4.9976,4.99769 -47.4777,72.4668 -222.3965,72.4668 H 1547.5955 L 1415.9666,1102.808 h 159.9375 v 38.7324 h -186.6094 l -114.8867,166.8438 h 170.3066 v 38.7324 H 1247.738 l -171.6035,249.2129 z" />
+                    </g>
+                    <g transform="translate(-84,0)">
+                        <path id="back-fillin-beige"
+                            d="m 86.56299,1656.0989 -0.09841,-1513.18502 801.39215,0.0255 196.15637,563.48105 V 827.6138 h -6.2481 c -256.21233,0 -427.60597,17.16924 -535.56053,34.49609 L 346.85291,643.94969 H 286.8822 l 93.13868,253.64454 0.10546,3.2168 -93.6289,254.97067 h 59.97265 L 541.82166,937.62157 c 107.95457,17.32685 279.34831,34.49414 535.56054,34.49414 h 6.248 V 1093.311 l -196.10116,563.1691 z" />
+                    </g>
+                </svg>
+            </div>
+
+        </section>
+
+        <section id="form">
+            <div class="text-section">
+                <p>Please enter your name and email for lounge access. Thank you for using Swiss Air.</p>
+            </div>
+            <form action="/guest_details_submit" method="post">
+                <input type="text" id="surname" name="surname" placeholder="Surname" autocomplete="off">
+                <input type="text" id="firstName" name="firstName" placeholder="First Name" autocomplete="off">
+                <input type="text" id="email" name="email" placeholder="Email" autocomplete="off">
+                <button type="submit" name="submit" value="Submit">Submit</button>
+            </form>
+            <div class="text-section">
+                <p></p>
+            </div>
+
+        </section>
+
+
+        <footer id="footer"></footer>
+    </div>
+    <script>
+        let logoButton = document.getElementById('logo');
+        function wrappedAnimationLoop() {
+            let paths = document.querySelectorAll('svg path');
+            i = 0;
+            paths.forEach(function (item, index) {
+                i++;
+                let pathLength = item.getTotalLength();
+                item.setAttribute('stroke-dasharray', pathLength);
+                item.setAttribute('stroke-dashoffset', pathLength);
+                window.scrollTo({
+                    top: 1000,
+                    behavior: 'smooth'
+                });
+                item.innerHTML = `
+    <animate attributeName='stroke-dashoffset' begin='0s' dur='2s' to='0' fill='freeze' />`
+                let backFillinBeige = document.getElementById('back-fillin-beige');
+                let fullOutlineGrey = document.getElementById('full-outline-grey');
+                backFillinBeige.innerHTML = `
+    <animate attributeName="fill" begin='3s' dur="6s" to="rgb(249, 245, 235)" fill="freeze" />`
+                fullOutlineGrey.innerHTML = `
+    <animate attributeName="fill" begin='4s' dur="3s" to="rgb(56, 60, 56)" fill="freeze" />`
+            });
+        }
+        logoButton.addEventListener('click', wrappedAnimationLoop());
+    </script>
+</body>
+
+</html>

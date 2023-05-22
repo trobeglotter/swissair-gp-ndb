@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 200vh;
+    font-size: 16px;
+    font-family: 'Mukta', sans-serif;
+    box-sizing: border-box;
+    background-color: rgb(87, 127, 142);
+}
+
+#header {
+    height: 100vh;
+}
+
+#header h1 {
+    position: fixed;
+    right: 12%;
+    top: 55%;
+    text-align: right;
+    color: rgb(249, 245, 235);
+    font-size: 10vw;
+    font-weight: 600;
+    margin: 0;
+}
+@media screen and (max-width: 414px) {
+    #header h1 {
+        right: 8%;
+        font-size: 18vw;
+    }
+}
+@media screen and (min-width: 1400px) {
+    #header h1 {
+        right: 8%;
+        font-size: 8vw;
+    }
+}
+svg {
+    width: 70%;
+}
+@media screen and (max-width: 820px) {
+    svg {
+        padding-top: 12vh;
+        width: 100%;
+    } 
+}
+@media screen and (max-width: 414px) {
+    svg {
+        padding-top: 15vh;
+        width: 100%;
+    }
+}
+@media screen and (min-width: 1400px) {
+    svg {
+        padding-top: 3vh;
+        width: 55%;
+    } 
+}
+#front-line {
+    /* visibility: hidden; */
+
+    fill: none;
+    stroke: rgb(249, 245, 235);
+    stroke-width: 5px;
+    /* height: 500px; */
+}
+#full-outline-grey {
+    /* fill: rgb(56, 60, 56); */
+    fill: rgb(87, 127, 142);
+
+}
+#back-fillin-beige {
+    /* fill: rgba(249, 245, 235, 0.25); */
+    fill: rgb(87, 127, 142);
+}
+/* #form - all bottom text - want it to stop and be fixed once scrolled up */
+
+#form {
+    margin: 0 12%;
+    padding-top: 1.8em;
+}
+@media screen and (max-width: 820px) {
+    #form {
+        margin: 0 12%;
+        padding-top: 10em;
+    }
+}
+@media screen and (max-width: 414px) {
+    #form {
+        left: 8%;
+    }
+}
+form {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+.text-section {
+    font-size: 1.25vw;
+    color: rgb(56, 60, 56);    
+    /* padding: .5em .125em; */
+}
+@media screen and (max-width: 820px) {
+    .text-section {
+        font-size: 2.2vw;
+    }
+}
+@media screen and (max-width: 414px) {
+    .text-section {
+        font-size: 4vw;
+    }
+}
+input {
+    color: rgb(249, 245, 235);
+    font-size: 1.25vw;
+    padding: .125em .25em;
+    margin: .125em;
+    /* background-color: rgb(249, 245, 235); */
+    background-color: rgb(87, 127, 142);
+    border: none;
+    border-bottom: 1px solid rgb(249, 245, 235, .5);
+
+}
+input::placeholder {
+    color: rgb(249, 245, 235, .75);
+    font: 12px/3 'Mukta', sans-serif;
+
+  }
+button  {
+    color: rgb(56, 60, 56);
+    font-size: 1.25vw;
+    padding: .125em .25em;
+    margin: .75em .125em 0;
+    background-color: rgb(249, 245, 235);
+    border: none;
+}
+@media screen and (max-width: 820px) {
+    input, button {
+        font-size: 3vw;
+    }
+}
+@media screen and (max-width: 414px) {
+    input, button  {
+        font-size: 5vw;
+    }
+}

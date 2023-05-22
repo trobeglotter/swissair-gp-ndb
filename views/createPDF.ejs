@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <style>
+        body {
+            box-sizing: border-box;
+            /* margin: 100px; */
+            padding: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        #doc {
+            width: 710px;
+            height: 950px;
+            border: none black 1px;
+            /* display: flexbox; */
+        }
+
+        /* section {
+            height: 260px;
+        } */
+
+        #section-one {
+            font-size: 14px;
+        }
+
+        #header {
+            margin: 0;
+        }
+
+        .logo {
+            text-align: right;
+            font-size: 50px;
+            margin: 0;
+        }
+
+
+        #section-two {
+            font-size: 12px;
+        }
+
+        #table-payment {
+            margin: 0 50px;
+        }
+
+        #qrcode-container {
+            text-align: right;
+        }
+
+        #qrcode {
+            width: 350px;
+        }
+
+        #section-three {
+            font-size: 14px;
+            /* margin-top: 175px; */
+        }
+
+        .largeText {
+            font-size: 2rem;
+            padding: 0;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="doc">
+        <div id="docInner">
+            <div id="header">
+                <h1 class="logo">SWISSAIR</h1>
+            </div>
+            <section id="section-one">
+
+                <span>Dear <%= loungeGuest[2] %>
+                        <%= loungeGuest[1] %> </span>
+                <p>Thank you for using Swiss Air Lounge service. Please save this pass in a mobile device and scan
+                    the
+                    QR
+                    code below
+                    at the lounge access located in Terminal 3 at
+                    Zurich International Airport. You will have access to the lounge 48 hours before your scheduled
+                    flight
+                    time. If
+                    you do not have a mobile device go to the ticketing counter and present your ID along with this
+                    document
+                    and a
+                    customer service agent will print a pass for you. For further inquiries send an email to
+                    customerservice@swissair.com.<br><br>
+                    Thank you for choosing Swiss Air Lounge.
+                </p>
+                <span class="largeText">
+                    <p>Pass Number: <%= loungeGuest[0] %>
+                    </p>
+                </span>
+
+
+            </section>
+            <section id="section-two">
+
+                <span>
+
+                    <table id="table-payment">
+                        <colgroup>
+                            <col style="width: 30em;">
+                            <col style="width: 25em;">
+                        </colgroup>
+                        <tr>
+                            <td>First Name: <%= loungeGuest[2] %>
+                            </td>
+                            <td>Guest Pass: 70 SFr</td>
+                        </tr>
+                        <tr>
+                            <td>Surname: <%= loungeGuest[1] %>
+                            </td>
+                            <td>Booking Fee: 12 SFr</td>
+                        </tr>
+                        <tr>
+                            <td>Email: <%= loungeGuest[3] %>
+                            </td>
+                            <td>Total: 82 SFr</td>
+                            <td></td>
+                        </tr>
+
+                    </table>
+                    <table id="qrcode-container">
+                        <tr>
+                            <td><span class="largeText">
+                                    <p>www.swissair.com</p>
+                                </span></td>
+                            <td><span><img id="qrcode" src="<%= qrcodepass %>" alt=""></span></td>
+                        </tr>
+                    </table>
+                </span>
+            </section>
+            <section class="section" id="section-three">
+                <p><b>IMPORTANT INFORMATION YOU SHOULD READ</b>
+                    <br>
+                    Please note that Swiss Air lounge does not provide assigned seating in the public areas. Customers
+                    aged 16 and under require a chaperon with boarding passes of the same flight and destination.
+                </p>
+                <p><b>Terms and Conditions</b>
+                    <br>
+                    This pass is of a standard fare - not refundable fare type. Swiss International Air Lines AG,
+                    colloquially known as SWISS, is the flag carrier of Switzerland, operating scheduled services in
+                    Europe and to North America, South America, Africa and Asia. Zurich Airport serves as its sole hub
+                    and Geneva Airport as a focus city.
+                </p>
+                <p>
+                    Issued subject to Swiss Air, which can be viewed here www.swissair.com/conditions.
+                </p>
+            </section>
+        </div>
+    </div>
+
+    <script src="qrcode.min.js"></script>
+    <script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // let docContent = document.getElementById('doc');
+
+        // var opt = {
+        //     margin: .5,
+        //     filename: 'myfile.pdf',
+        //     image: { type: 'jpeg', quality: 0.98 },
+        //     html2canvas: { scale: 2 },
+        //     jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+        // };
+        // Uncomment to print pdf
+        // html2pdf().from(docContent).set(opt).save();
+
+        // after saving what to do to make the gmail connection?
+    </script>
+    <!-- <script src="autofillPDF.js"></script>
+    <script src="createPDF.js"></script> -->
+</body>
+
+</html>
